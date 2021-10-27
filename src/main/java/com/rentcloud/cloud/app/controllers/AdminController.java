@@ -51,7 +51,7 @@ public class AdminController {
     /* *************************************************Delete****************************************/
 
     //este es el delete
-    @DeleteMapping("/{id }")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)//Retorna Status 204
     public boolean delete(@PathVariable("id") int adminId){//con @PathVariable le indicamos que le vamos a enviar una variable a través del parámetro
 

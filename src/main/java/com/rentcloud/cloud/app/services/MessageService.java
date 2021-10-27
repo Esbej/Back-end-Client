@@ -73,18 +73,9 @@ public class MessageService {
     /* ***************************************Delete**********************************************************/
 
     public boolean delete(int messageId){
-        //si obtiene el id, lo borramos y retornamos true
         return getMessage(messageId).map(message -> {
-            repository.delete(message);//ejecutamos una función anónima para eliminarlo y retornamos true
+            repository.delete(message);
             return true;
-        }).orElse(false);//si no obtiene el id retorna false
-
-        //si obtiene Id, los mapea a una variable
-        /* boolean respuesta=getAdmin(adminId).map(admin->{
-          repository.delete(admin);//ejecutamos una función anónima para eliminarlo y retornamos true
-          return true;
-       }).orElse(false);//ni no lo elimina devuelve un false
-        return respuesta;
-    }*/
+        }).orElse(false);
     }
 }

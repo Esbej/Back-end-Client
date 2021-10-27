@@ -55,7 +55,7 @@ public class CategoryService {
          Optional<category> existCategory= repository.getCategory(category.getId());
          //si el id del  admin existe
          if(existCategory.isPresent()){
-             //si el campo nombre no es null, reemplazar con los datos enviados
+             //si el campo nombre no está vacío, reemplazar con los datos enviados
              if(category.getName()!=null){
                  existCategory.get().setName(category.getName());
              }
@@ -82,18 +82,6 @@ public class CategoryService {
      return getCategory(categoryId).map(category->{
          repository.delete(category);//ejecutamos una función anónima para eliminarlo y retornamos true
          return true;
-     }).orElse(false);//si no obtiene el id retorna false
-
-     //si obtiene Id, los mapea a una variable
-        /* boolean respuesta=getAdmin(adminId).map(admin->{
-          repository.delete(admin);//ejecutamos una función anónima para eliminarlo y retornamos true
-          return true;
-       }).orElse(false);//ni no lo elimina devuelve un false
-        return respuesta;
-    }*/
+     }).orElse(false);
  }
 };
-
-
-
-

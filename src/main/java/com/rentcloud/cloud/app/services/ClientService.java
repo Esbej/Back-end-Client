@@ -82,18 +82,9 @@ public class ClientService {
     /* ***************************************Delete**********************************************************/
 
     public boolean delete(int clientId){
-        //si obtiene el id, lo borramos y retornamos true
         return getClient(clientId).map(client->{
-            repository.delete(client);//ejecutamos una función anónima para eliminarlo y retornamos true
+            repository.delete(client);
             return true;
-        }).orElse(false);//si no obtiene el id retorna false
-
-        //si obtiene Id, los mapea a una variable
-        /* boolean respuesta=getAdmin(adminId).map(admin->{
-          repository.delete(admin);//ejecutamos una función anónima para eliminarlo y retornamos true
-          return true;
-       }).orElse(false);//ni no lo elimina devuelve un false
-        return respuesta;
-    }*/
+        }).orElse(false);
     }
 }

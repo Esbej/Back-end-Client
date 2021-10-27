@@ -56,7 +56,7 @@ public class CloudController {
     /* *************************************************Delete****************************************/
 
     //este es el delete
-    @DeleteMapping("/{id }")  //con @PathVariable le indicamos que le vamos a enviar una variable a través del parámetro
+    @DeleteMapping("/{id}")  //con @PathVariable le indicamos que le vamos a enviar una variable a través del parámetro
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int cloudId){
 

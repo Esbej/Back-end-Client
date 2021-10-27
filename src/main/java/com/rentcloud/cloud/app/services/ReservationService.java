@@ -79,18 +79,9 @@ public class ReservationService {
     /* ***************************************Delete**********************************************************/
 
     public boolean delete(int reservationId){
-        //si obtiene el id, lo borramos y retornamos true
         return getReservation(reservationId).map(reservation ->{
-            repository.delete(reservation);//ejecutamos una función anónima para eliminarlo y retornamos true
+            repository.delete(reservation);
             return true;
-        }).orElse(false);//si no obtiene el id retorna false
-
-        //si obtiene Id, los mapea a una variable
-        /* boolean respuesta=getAdmin(adminId).map(admin->{
-          repository.delete(admin);//ejecutamos una función anónima para eliminarlo y retornamos true
-          return true;
-       }).orElse(false);//ni no lo elimina devuelve un false
-        return respuesta;
-    }*/
+        }).orElse(false);
     }
 }

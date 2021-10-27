@@ -11,8 +11,7 @@ import java.util.Optional;
 
 @Repository
 public class CategoryRepository {
-    @Autowired /*acá es como crear un objeto del interface CategoryCrudRepository
-    la cual usaremos para la conexión a la base de datos*/
+    @Autowired
     private CategoryCrudRepository repository;
 
     /* **********************************Creamos el CRUD *******************************************************************/
@@ -33,7 +32,6 @@ public class CategoryRepository {
     /*Insert y Update
      * actualiza o crea nuevo registro*/
     public category save(category category){
-
         return repository.save(category);
     }
 
